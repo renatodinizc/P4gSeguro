@@ -1,0 +1,20 @@
+require: 
+  - rubocop-rails
+AllCops:
+ NewCops: enable
+ TargetRubyVersion: 3.0.2
+ Exclude:
+   - 'bin/**/*'
+   - 'vendor/**/*'
+   - 'db/**/*'
+   - 'config/**/*'
+   - 'script/**/*'
+   - 'spec/rails_helper.rb'
+Documentation:
+ Enabled: false
+Style/FrozenStringLiteralComment:
+ Enabled: false
+Metrics/BlockLength:
+  IgnoredMethods: ['describe', 'context', 'feature', 'scenario', 'let', 'it']
+Layout/LineLength:
+  Max: 80
