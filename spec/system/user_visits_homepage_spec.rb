@@ -9,8 +9,22 @@ describe 'User visits home page' do
     fill_in 'Password confirmation', with: '123123', match: :prefer_exact
     click_on 'Sign up'
 
-    # expect(page).not_to have_content 'Welcome to P4gSeguro'
+    expect(page).not_to have_content 'Welcome to P4gSeguro'
     expect(page).to have_content 'Welcome! You have signed up successfully.'
+    expect(page).to have_content 'mary@nestle.com is logged in as User'
+  end
+
+  it 'and logs into platform successfully' do
+    create(:user, email: 'mary@nestle.com', password: '123123')
+
+    visit root_path
+    click_on 'Login as User'
+    fill_in 'Email', with: 'mary@nestle.com'
+    fill_in 'Password', with: '123123'
+    click_on 'Log in'
+
+    expect(page).not_to have_content 'Welcome to P4gSeguro'
+    expect(page).to have_content 'Signed in successfully.'
     expect(page).to have_content 'mary@nestle.com is logged in as User'
   end
 

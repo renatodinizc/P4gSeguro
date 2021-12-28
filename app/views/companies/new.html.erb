@@ -1,0 +1,11 @@
+<h1> Company registration form </h1>
+<%= form_with model: @company do |f| %>
+  <% @company.errors.full_messages.each do |error| %>
+    <dt> • <%= error %> </dt>
+  <% end %>
+  <dt> <%= f.label :name %> <%= f.text_field :name %> </dt>
+  <dt> <%= f.label :cnpj %> <%= f.text_field :cnpj %> </dt>
+  <dt> <%= f.label :billing_address %> <%= f.text_field :billing_address %> </dt>
+  <dt> <%= f.label :billing_email %> <%= f.text_field :billing_email %> </dt>
+  <dt> <%= f.submit %> </dt>
+<% end %>

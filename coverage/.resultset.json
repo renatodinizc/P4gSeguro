@@ -8,6 +8,10 @@
           null,
           1,
           null,
+          null,
+          1,
+          null,
+          1,
           null
         ]
       },
@@ -38,10 +42,58 @@
       "/Users/renato/RailsProjects/P4gSeguro/app/controllers/application_controller.rb": {
         "lines": [
           1,
+          1,
+          8,
+          8,
+          2,
+          null,
+          6,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/renato/RailsProjects/P4gSeguro/app/models/company.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/renato/RailsProjects/P4gSeguro/app/controllers/companies_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/renato/RailsProjects/P4gSeguro/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1640719098
+    "timestamp": 1640723777
   }
 }
