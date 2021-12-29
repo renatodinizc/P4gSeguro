@@ -15,4 +15,10 @@ class CompaniesController < ApplicationController
       render :new
     end
   end
+
+  def accept
+    @company = Company.find(params[:id])
+    @company.approved!
+    redirect_to admin_path current_admin
+  end
 end

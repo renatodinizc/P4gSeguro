@@ -23,15 +23,14 @@ describe 'User visits home page' do
     fill_in 'Password', with: '123123'
     click_on 'Log in'
 
-    expect(page).not_to have_content 'Welcome to P4gSeguro'
     expect(page).to have_content 'Signed in successfully.'
     expect(page).to have_content 'mary@nestle.com is logged in as User'
   end
 
   it 'log in and logs out successfully' do
-    peter = create(:user, email: 'mary@nestle.com', password: '123123')
+    mary = create(:user, email: 'mary@nestle.com', password: '123123')
 
-    login_as peter, scope: :user
+    login_as mary, scope: :user
     visit root_path
     click_on 'Log out'
 

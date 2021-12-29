@@ -39,4 +39,15 @@ describe 'Admin visits home page' do
     expect(page).to have_content 'Signed out successfully.'
     expect(page).not_to have_content 'Log out'
   end
+
+  it 'and access own control panel successfully' do
+    peter = create(:admin, email: 'peter@p4gseguro.com', password: '123123')
+
+    login_as peter, scope: :admin
+    visit root_path
+    click_on 'My control panel'
+
+    expect(page).not_to have_content 'Welcome to P4gSeguro'
+    expect(page).to have_content 'Control panel from peter@p4gseguro.com'
+  end
 end

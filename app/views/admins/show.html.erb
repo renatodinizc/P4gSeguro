@@ -1,0 +1,14 @@
+<h1> Control panel from <%= @admin.email %> </h1>
+
+<h4> Pending accounts for approval </h4>
+<% @users.each do |user| %>
+<dl>
+  <dt> Company: <%= user.company.name %> </dt>
+  <dt> CNPJ: <%= user.company.cnpj %> </dt>
+  <dt> Billing adress: <%= user.company.billing_address %> </dt>
+  <dt> Billing email: <%= user.company.billing_email %> </dt>
+  <dt> Point of contact: <%= user.email %> </dt>
+  <dt> Company status on platform: <%= user.company.status %> </dt>
+  <dt> <%= link_to 'Accept company', accept_company_path(user.company), method: :post %> </dt>
+</dl>
+<% end %>

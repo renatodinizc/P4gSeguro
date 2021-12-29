@@ -94,6 +94,7 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
+    ffaker (2.20.0)
     ffi (1.15.4)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -265,6 +266,7 @@ DEPENDENCIES
   capybara
   devise
   factory_bot_rails
+  ffaker
   jbuilder (~> 2.7)
   listen (~> 3.3)
   puma (~> 5.0)

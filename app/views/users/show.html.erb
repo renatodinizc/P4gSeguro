@@ -1,3 +1,12 @@
 <h1> <%= @user.email %> profile </h1>
 <h3> Your company </h3>
-<dl> • Company: <%= @user.company.name %> </dl>
+<dl>
+  <dt> • Company: <%= @user.company.name %> </dt>
+  <dt> • CNPJ: <%= @user.company.cnpj %> </dt>
+  <dt> • Billing address: <%= @user.company.billing_address %> </dt>
+  <dt> • Billing email: <%= @user.company.billing_email %> </dt>
+</dl>
+
+<% if @user.company.pending_approval? %>
+  <b> You account is being evaluated by our admins </b>
+<% end %>

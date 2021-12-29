@@ -21,6 +21,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara'
   gem 'factory_bot_rails'
+  gem 'ffaker'
   gem 'rspec-rails'
   gem 'simplecov', require: false
 end

@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
-  resources :companies
+  resources :companies do
+    post 'accept', on: :member
+  end
+  
   resources :users, only: [:show]
+  resources :admins, only: [:show]
 end

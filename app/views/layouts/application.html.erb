@@ -16,6 +16,8 @@
     <% if admin_signed_in? %>
       <%= current_admin.email %> is logged in as Admin
       &emsp;
+      <%= link_to 'My control panel', admin_path(current_admin) %>
+      &emsp;
       <%= link_to 'Log out', destroy_admin_session_path , method: :delete %>
     <% elsif user_signed_in? %>
       <%= current_user.email %> is logged in as User
