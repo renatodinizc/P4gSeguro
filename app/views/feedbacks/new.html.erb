@@ -1,0 +1,8 @@
+<h1> Deny feedback form </h1>
+<%= form_with model: @feedback, url: company_feedbacks_path do |f| %>
+  <% @feedback.errors.full_messages.each do |error| %>
+    <dt> • <%= error %> </dt>
+  <% end %>
+  <dt> <%= f.label :body %> <%= f.text_area :body %> </dt>
+  <dt> <%= f.submit %> </dt>
+<% end %>

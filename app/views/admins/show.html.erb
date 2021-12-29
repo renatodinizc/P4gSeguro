@@ -1,4 +1,5 @@
 <h1> Control panel from <%= @admin.email %> </h1>
+<%= link_to 'List of companies', companies_list_admins_path %>
 
 <h4> Pending accounts for approval </h4>
 <% @users.each do |user| %>
@@ -10,5 +11,6 @@
   <dt> Point of contact: <%= user.email %> </dt>
   <dt> Company status on platform: <%= user.company.status %> </dt>
   <dt> <%= link_to 'Accept company', accept_company_path(user.company), method: :post %> </dt>
+  <dt> <%= link_to 'Deny company', new_company_feedback_path(user.company) %> </dt>
 </dl>
 <% end %>
