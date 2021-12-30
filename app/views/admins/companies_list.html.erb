@@ -3,5 +3,8 @@
 <dl>
   <dt> <%= company.name %> </dt>
   <dt> Status: <%= company.status %> </dt>
+  <% if company.denied? %>
+    <dt> Denial feedback: <%= company.feedback.body %> </dt>
+  <% end %>
 </dl>
 <% end %>

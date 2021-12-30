@@ -9,4 +9,6 @@
 
 <% if @user.company.pending_approval? %>
   <b> You account is being evaluated by our admins </b>
+  <% elsif @user.company.denied? %>
+  <b> You account was not authorized by our admins </b>
 <% end %>

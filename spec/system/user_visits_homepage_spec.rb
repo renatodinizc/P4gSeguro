@@ -27,6 +27,16 @@ describe 'User visits home page' do
     expect(page).to have_content 'mary@nestle.com is logged in as User'
   end
 
+  it 'and access own profile successfully' do
+    mary = create(:user, email: 'mary@nestle.com', password: '123123')
+
+    login_as mary, scope: :user
+    visit root_path
+    click_on 'My profile'
+
+    expect(page).to have_content 'mary@nestle.com profile'
+  end
+
   it 'log in and logs out successfully' do
     mary = create(:user, email: 'mary@nestle.com', password: '123123')
 

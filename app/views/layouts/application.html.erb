@@ -22,6 +22,8 @@
     <% elsif user_signed_in? %>
       <%= current_user.email %> is logged in as User
       &emsp;
+      <%= link_to 'My profile', user_path(current_user) %>
+      &emsp;
       <%= link_to 'Log out', destroy_user_session_path , method: :delete %>
     <% else %>
       <%= link_to 'Create new User account', new_user_registration_path %>

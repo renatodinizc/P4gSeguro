@@ -74,6 +74,8 @@ describe 'Admin access own control panel' do
       create(:user, :owner, email: 'owner1@company1.com', company: company1)
       create(:user, :owner, email: 'owner2@company2.com', company: company2)
       create(:user, :owner, email: 'owner3@company3.com', company: company3)
+      create(:feedback, company: company3, 
+                        body: "Company don't fill all prerequisites")
 
       login_as peter, scope: :admin
       visit root_path
@@ -86,6 +88,8 @@ describe 'Admin access own control panel' do
       expect(page).to have_content 'Status: approved'
       expect(page).to have_content company3.name.to_s
       expect(page).to have_content 'Status: denied'
+      expect(page)
+        .to have_content "Denial feedback: Company don't fill all prerequisites"
     end
   end
 end
